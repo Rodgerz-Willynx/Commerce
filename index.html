@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MylesMart - Online Shopping Kenya</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+<header class="header"><div class="container nav">
+<a href="#" class="logo">Myles<span>Mart</span></a>
+<div class="search-box" role="search"><input id="searchInput" type="search" placeholder="Search products..." aria-label="Search featured products"><button id="searchButton" type="button" aria-label="Search"><i class="fa-solid fa-search"></i></button></div>
+<div class="nav-actions"><button class="nav-icon" id="accountButton"><i class="fa-regular fa-user"></i><span id="accountLabel">Account</span></button><button class="cart-btn" id="cartButton"><i class="fa-solid fa-cart-shopping"></i><span>Cart</span><b id="cartCount">0</b></button></div>
+</div></header>
+
+<section class="hero"><div class="container hero-content">
+<div class="hero-text"><p class="small-title"><img class="kenya-flag" src="kenyan flag.jpg" alt="Kenyan flag" style="width:20px;height:14px;object-fit:cover;vertical-align:middle;margin-right:6px;border:1px solid #e5e7eb"> SHOP ONLINE IN KENYA</p><h1>Everything You Need, <span>Delivered.</span></h1><p>Discover quality products at great prices. Shop online and get your order delivered anywhere in Kenya.</p><a href="#products" class="primary-btn">Shop Now <i class="fa-solid fa-arrow-right"></i></a></div>
+<div class="hero-image"><div class="hero-card"><i class="fa-solid fa-truck-fast"></i><h3>Fast Delivery</h3><p>Across Kenya</p></div></div>
+</div></section>
+
+<section class="categories"><div class="container">
+<div class="section-header"><div><p class="section-label">SHOP BY CATEGORY</p><h2>Popular Categories</h2></div></div>
+<div class="category-grid">
+<button class="category-card" data-category="Electronics"><i class="fa-solid fa-mobile-screen-button"></i><span>Electronics</span></button>
+<button class="category-card" data-category="Fashion"><i class="fa-solid fa-shirt"></i><span>Fashion</span></button>
+<button class="category-card" data-category="Home"><i class="fa-solid fa-house"></i><span>Home</span></button>
+<button class="category-card" data-category="Beauty"><i class="fa-solid fa-spa"></i><span>Beauty</span></button>
+<button class="category-card" data-category="Accessories"><i class="fa-solid fa-gem"></i><span>Accessories</span></button>
+<button class="category-card" data-category="All"><i class="fa-solid fa-border-all"></i><span>All Products</span></button>
+</div></div></section>
+
+<section class="products-section" id="products"><div class="container">
+<div class="section-header"><div><p class="section-label">OUR STORE</p><h2>Featured Products</h2></div>
+<select id="sortProducts"><option value="default">Sort Products</option><option value="low">Price: Low to High</option><option value="high">Price: High to Low</option><option value="name">Name: A-Z</option></select></div>
+<div id="productGrid" class="product-grid"></div>
+</div></section>
+
+<dialog class="product-image-dialog" id="productImageDialog" aria-label="Product image preview">
+<button class="product-image-close" id="closeProductImage" type="button" aria-label="Close image preview"><i class="fa-solid fa-xmark"></i></button>
+<img id="productImagePreview" alt="">
+<p id="productImageCaption"></p>
+</dialog>
+
+<section class="features"><div class="container feature-grid">
+<div class="feature"><i class="fa-solid fa-truck-fast"></i><div><h3>Fast Delivery</h3><p>Reliable delivery across Kenya.</p></div></div>
+<div class="feature"><i class="fa-solid fa-shield-halved"></i><div><h3>Secure Shopping</h3><p>Your information stays protected.</p></div></div>
+<div class="feature"><i class="fa-solid fa-mobile-screen"></i><div><h3>M-Pesa Ready</h3><p>Easy mobile payment options.</p></div></div>
+<div class="feature"><i class="fa-solid fa-headset"></i><div><h3>Customer Support</h3><p>We're here to help.</p></div></div>
+</div></section>
+
+<div class="account-overlay" id="accountOverlay"></div>
+<aside class="account-modal" id="accountModal">
+<div class="account-header"><h2 id="accountModalTitle">Account</h2><button id="closeAccount"><i class="fa-solid fa-xmark"></i></button></div>
+<div class="account-tabs">
+<button class="tab-btn active" data-tab="login">Login</button>
+<button class="tab-btn" data-tab="signup">Create Account</button>
+</div>
+<div class="account-panel active" id="loginPanel">
+<form id="loginForm" class="account-form">
+<label>Email<input type="email" id="loginEmail" placeholder="Enter your email address" required></label>
+<label>Password<input type="password" id="loginPassword" placeholder="Enter your password" required></label>
+<button type="submit" class="primary-btn account-submit">Login</button>
+<button type="button" class="account-text-button" id="forgotPasswordButton">Forgot password?</button>
+</form>
+</div>
+<div class="account-panel" id="signupPanel">
+<form id="signupForm" class="account-form">
+<label>Full Name<input type="text" id="signupName" placeholder="Enter your full name" required></label>
+<label>Email<input type="email" id="signupEmail" placeholder="Enter your email address" required></label>
+<label>Password<input type="password" id="signupPassword" placeholder="Create a password (at least 6 characters)" minlength="6" required></label>
+<button type="submit" class="primary-btn account-submit">Create Account</button>
+</form>
+</div>
+<div class="account-panel" id="resetPasswordPanel">
+<form id="resetPasswordForm" class="account-form">
+<p class="account-help">Enter the email used for your account and choose a new password.</p>
+<label>Email<input type="email" id="resetEmail" placeholder="Enter your account email" required></label>
+<label>New Password<input type="password" id="newPassword" placeholder="Create a new password (at least 6 characters)" minlength="6" required></label>
+<label>Confirm New Password<input type="password" id="confirmNewPassword" placeholder="Re-enter your new password" minlength="6" required></label>
+<button type="submit" class="primary-btn account-submit">Save New Password</button>
+<button type="button" class="account-text-button" id="backToLoginButton">Back to Login</button>
+</form>
+</div>
+<p id="accountMessage" class="account-message"></p>
+<div class="account-logout-wrap"><button class="logout-btn" id="logoutBtn" hidden>Logout</button></div>
+</aside>
+
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-sidebar" id="cartSidebar">
+<div class="cart-header"><h2>Your Cart</h2><button id="closeCart"><i class="fa-solid fa-xmark"></i></button></div>
+<div id="cartItems" class="cart-items"></div>
+<div class="cart-footer"><div class="subtotal"><span>Subtotal</span><strong id="cartTotal">KSh 0</strong></div>
+<button class="checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+<button class="whatsapp-btn" id="whatsappBtn"><i class="fa-brands fa-whatsapp"></i> Order via WhatsApp</button></div>
+</aside>
+
+<section class="faq-section" id="faqs">
+<div class="container">
+<div class="section-header"><div><p class="section-label">NEED HELP?</p><h2>Frequently Asked Questions</h2></div></div>
+<div class="faq-list">
+<details class="faq-item"><summary>How do I place an order?</summary><p>Add products to your cart, then choose “Order via WhatsApp” to discuss your order. The online checkout is a demo and does not yet process payments.</p></details>
+<details class="faq-item"><summary>Where do you deliver?</summary><p>MylesMart advertises delivery across Kenya. Delivery fees and estimated arrival times are not currently listed, so please confirm them when arranging your order.</p></details>
+<details class="faq-item"><summary>Which payment methods can I use?</summary><p>M-Pesa payment processing is not connected yet. Please confirm available payment options when arranging your order via WhatsApp.</p></details>
+<details class="faq-item"><summary>How do I create an account or log in?</summary><p>Create an account with your name, email, and password, then log in using the same email and password. Account information is currently saved only in this browser.</p></details>
+<details class="faq-item"><summary>What if I forget my password?</summary><p>Use “Forgot password?” on the login form to set a new password for the account email saved in this browser. This demo does not verify email ownership; do not use a password you rely on elsewhere.</p></details>
+<details class="faq-item"><summary>Are the displayed ratings and stock quantities live?</summary><p>No. Ratings and stock quantities are sample values for demonstration and are not connected to customer reviews or live inventory.</p></details>
+<details class="faq-item" id="faq-returns"><summary>What is your returns policy?</summary><p>Returns terms are not published yet. Please confirm the return or exchange conditions when arranging your order.</p></details>
+</div>
+</div>
+</section>
+
+<footer><div class="container footer-grid">
+<div><h2 class="logo">Myles<span>Mart</span></h2><p>Your trusted online shopping destination in Kenya.</p></div>
+<div><h3>Shop</h3><a href="#products" data-category="All">All Products</a><a href="#products" data-category="Electronics">Electronics</a><a href="#products" data-category="Fashion">Fashion</a><a href="#products" data-category="Home">Home</a></div>
+<div><h3>Customer Service</h3><a href="#">Contact Us</a><a href="#">Delivery Information</a><a href="#faq-returns">Returns</a><a href="#faqs">FAQs</a></div>
+<div><h3>Contact</h3><p class="contact-line"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>Nairobi, Kenya</span></p><p class="contact-line"><i class="fa-solid fa-phone" aria-hidden="true"></i><span>+254 700 000 000</span></p><p class="contact-line"><i class="fa-solid fa-envelope" aria-hidden="true"></i><span>hello@jumiamart.co.ke</span></p></div>
+</div><div class="copyright">© 2026 MylesMart. All rights reserved.</div></footer>
+<script src="script.js"></script>
+</body>
+</html>

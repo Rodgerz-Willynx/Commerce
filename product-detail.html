@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="View product details at MylesMart.">
+<title>Product Details | MylesMart</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+<header class="header">
+  <div class="container nav detail-nav">
+    <a href="index.html" class="logo">Myles<span>Mart</span></a>
+    <a class="detail-back-link" href="index.html#products"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to products</a>
+  </div>
+</header>
+
+<main class="container product-detail">
+  <div class="product-detail-image">
+    <img id="detailImage" src="" alt="">
+  </div>
+  <article class="product-detail-info">
+    <p class="product-category" id="detailCategory"></p>
+    <h1 id="detailName"></h1>
+    <div class="product-rating" id="detailRating">
+      <span class="rating-stars" id="detailStars" aria-hidden="true"></span>
+      <span class="rating-value" id="detailRatingValue"></span>
+      <span class="rating-label">Sample</span>
+    </div>
+    <p class="product-detail-price" id="detailPrice"></p>
+    <p class="product-detail-description" id="detailDescription"></p>
+    <h2>Product highlights</h2>
+    <ul class="product-detail-highlights" id="detailHighlights"></ul>
+    <p class="product-detail-note" id="detailNote"></p>
+    <a class="primary-btn" href="index.html#products">Continue shopping <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+  </article>
+</main>
+
+<footer>
+  <div class="container detail-footer">
+    <p>MylesMart · Shopping in Kenya</p>
+    <a href="index.html#products">Browse all products</a>
+  </div>
+</footer>
+<script src="product-detail.js"></script>
+</body>
+</html>
